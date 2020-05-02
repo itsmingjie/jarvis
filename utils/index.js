@@ -6,3 +6,4 @@
 exports.echo = require("./echo");
 exports.clear = require("./clear");
 exports.zap = require("./zap");
+exports.weather = require("./weather");

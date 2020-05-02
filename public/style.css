@@ -44,6 +44,7 @@ body {
   font-size: 15px;
   resize: vertical;
   border-top-width: 15px;
+  text-align: left;
 }
 
 #panel {
@@ -60,4 +61,19 @@ body {
   font-weight: 400;
   background: transparent;
   height: 100%;
+}
+
+p.message {
+  line-height: 1.2;
+  margin: 5px;
+  cursor: text;
+  -moz-user-select: text;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+p.message.client {
+  font-weight: 800;
 }

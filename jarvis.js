@@ -16,6 +16,7 @@ app.get("/*", express.static(path.join(__dirname, "/public")));
 // run websocket
 io.on("connection", (socket) => {
   comm(socket, `Welcome! JARVIS is connected. Server version: ${ver}`, "info");
+  socket.emit("end");
 
   socket.on("comm", (data) => {
     socket.emit("start");

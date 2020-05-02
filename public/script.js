@@ -13,8 +13,18 @@ const stateColors = {
 
 // temporary solution to display data
 socket.on("comm", (data) => {
-  dialogue.val(`${data.origin} > ${data.message}\n` + dialogue.val());
-  dialogue.css("border-color", stateColors[data.state]);
+  if (data.origin == "server")
+    dialogue.html(
+      `<p class="message ${data.origin}" style="color: ${
+        stateColors[data.state]
+      }">JARVIS: ${data.message}</p>` + dialogue.html()
+    );
+  else
+    dialogue.html(
+      `<p class="message ${data.origin}" style="color: ${
+        stateColors[data.state]
+      }">>> ${data.message}</p>` + dialogue.html()
+    );
 });
 
 // server side command execution started
@@ -28,7 +38,7 @@ command.keypress((event) => {
     socket.emit("comm", {
       message: command.val(),
       ts: new Date(),
-      origin: "Mingjie",
+      origin: "client",
       state: "user",
     });
 
