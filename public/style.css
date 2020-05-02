@@ -1,0 +1,60 @@
+@import url("https://rsms.me/inter/inter.css");
+
+html {
+  font-family: "Inter", sans-serif;
+  max-width: 800px;
+  margin: auto
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+#wrapper {
+    position: relative;
+}
+
+#dialogue {
+    width: 99%;
+    min-height: 15rem;
+    line-height: 1.5;
+    font-family: monospace;
+    resize: vertical; 
+    border-bottom-width: 15px;
+}
+
+#panel {
+    min-height: 2.2rem;
+    width: 99%;
+}
+
+#prompt {
+    font-family: monospace;
+    text-align: right;
+    clear: both;
+    float: left;
+    margin-right:10px;
+    width: 70px;
+    height: 100%;
+    margin-top: 2px;
+    font-weight: 800;
+}
+
+#command {
+    font-family: monospace;
+    border: none;
+    float: left;
+    width: calc(100% - 90px);
+    font-size: 14px;
+    font-weight: 400;
+    background: transparent;
+    height: 100%;
+    margin-bottom: 15px;
+}
+
+#copyright {
+    text-align: right;
+    font-family: monospace;
+}

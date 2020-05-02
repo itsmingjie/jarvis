@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Jarvis</title>
+    <link rel="stylesheet" href="https://unpkg.com/blocks.css/dist/blocks.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <div class="block fixed" id="wrapper">
+        <h1>Jarvis</h1>
+
+        <textarea id="dialogue" class="block fixed" disabled></textarea>
+
+        <div id="panel" class="block fixed">
+            <span id="prompt">Jarvis > </span>
+            <input id="command" autofocus autocomplete="off" />
+        </div>
+    </div>
+
+    <p id="copyright">&copy;2020 @itsmingjie</p>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"
+        integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
