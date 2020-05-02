@@ -13,7 +13,7 @@ module.exports = (socket, message, state) => {
       message: message,
       ts: new Date(),
       state: state,
-      origin: "Jarvis",
+      origin: "JARVIS",
     });
   } catch (err) {
     return {

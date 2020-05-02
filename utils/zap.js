@@ -7,16 +7,22 @@ const comm = require("../control/comm");
 const fetch = require("node-fetch");
 
 module.exports = async (socket, message) => {
+  const split = message.split(" ")
+  const command = split[0];
+  const parameters = split.slice(1).join(" ");
+
   const records = await base("runnable")
     .select({
       maxRecords: 1,
       view: "Grid view",
-      filterByFormula: `{slug} = '${message}'`,
+      filterByFormula: `{slug} = '${command}'`,
     })
     .all();
 
   if (records.length > 0) {
-    fetch(records[0].get("webhook"))
+    const url = records[0].get("webhook");
+    comm(socket, `Attempting to tap webhook ${url}...`, "info");
+    fetch(`${url}?message=${parameters}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.status == "success") {

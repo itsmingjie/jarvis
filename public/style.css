@@ -1,9 +1,10 @@
 @import url("https://rsms.me/inter/inter.css");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap");
 
 html {
   font-family: "Inter", sans-serif;
   max-width: 800px;
-  margin: auto
+  margin: auto;
 }
 
 @supports (font-variation-settings: normal) {
@@ -12,49 +13,51 @@ html {
   }
 }
 
+body {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
 #wrapper {
-    position: relative;
+  position: relative;
+  text-align: center;
 }
 
-#dialogue {
-    width: 99%;
-    min-height: 15rem;
-    line-height: 1.5;
-    font-family: monospace;
-    resize: vertical; 
-    border-bottom-width: 15px;
-}
-
-#panel {
-    min-height: 2.2rem;
-    width: 99%;
-}
-
-#prompt {
-    font-family: monospace;
-    text-align: right;
-    clear: both;
-    float: left;
-    margin-right:10px;
-    width: 70px;
-    height: 100%;
-    margin-top: 2px;
-    font-weight: 800;
-}
-
-#command {
-    font-family: monospace;
-    border: none;
-    float: left;
-    width: calc(100% - 90px);
-    font-size: 14px;
-    font-weight: 400;
-    background: transparent;
-    height: 100%;
-    margin-bottom: 15px;
+#logo {
+  height: 30px;
+  margin: 25px 0 5px;
 }
 
 #copyright {
-    text-align: right;
-    font-family: monospace;
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+#dialogue {
+  width: 99%;
+  min-height: 20rem;
+  line-height: 1.5;
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: normal;
+  font-size: 15px;
+  resize: vertical;
+  border-top-width: 15px;
+}
+
+#panel {
+  min-height: 2.2rem;
+  width: 99%;
+}
+
+#command {
+  font-family: "Ubuntu Mono", monospace;
+  border: none;
+  float: left;
+  width: 96%;
+  font-size: 14px;
+  font-weight: 400;
+  background: transparent;
+  height: 100%;
 }

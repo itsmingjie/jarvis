@@ -11,14 +11,9 @@ const stateColors = {
   user: "#000",
 };
 
-setInterval(() => {
-  // command.focus();
-  dialogue.scrollTop(dialogue[0].scrollHeight);
-}, 50);
-
 // temporary solution to display data
 socket.on("comm", (data) => {
-  dialogue.val(dialogue.val() + `\n${data.origin} > ${data.message}`);
+  dialogue.val(`${data.origin} > ${data.message}\n` + dialogue.val());
   dialogue.css("border-color", stateColors[data.state]);
 });
 
@@ -58,12 +53,10 @@ let toggleCommand = (enable) => {
     command.prop("disabled", false);
     command.css("cursor", "text");
     command.val("");
-    prompt.text("Jarvis >");
   } else {
     // disable
     command.prop("disabled", true);
     command.css("cursor", "default");
     command.val("Awaiting response from Jarvis ...");
-    prompt.text("...");
   }
 };

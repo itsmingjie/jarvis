@@ -1,25 +1,67 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Jarvis</title>
+    <title>JARVIS</title>
     <link rel="stylesheet" href="https://unpkg.com/blocks.css/dist/blocks.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="jarvis.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="jarvis-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="jarvis-180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="jarvis-167.png">
+
+    <link href="splashscreens/iphone5_splash.png"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphone6_splash.png"
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphoneplus_splash.png"
+        media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)"
+        rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphonex_splash.png"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+        rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphonexr_splash.png"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphonexsmax_splash.png"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
+        rel="apple-touch-startup-image" />
+    <link href="splashscreens/ipad_splash.png"
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+    <link href="splashscreens/ipadpro1_splash.png"
+        media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+    <link href="splashscreens/ipadpro3_splash.png"
+        media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+    <link href="splashscreens/ipadpro2_splash.png"
+        media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="JARVIS">
 </head>
 
 <body>
 
     <div class="block fixed" id="wrapper">
-        <h1>Jarvis</h1>
-
-        <textarea id="dialogue" class="block fixed" disabled></textarea>
+        <img src="jarvis-title.svg" id="logo">
+        <p id="copyright">&copy;2020 @itsmingjie</p>
 
         <div id="panel" class="block fixed">
-            <span id="prompt">Jarvis > </span>
-            <input id="command" autofocus autocomplete="off" />
+            <input id="command" autofocus autocomplete="off" autocapitalize="off"  placeholder="Enter command here..." />
         </div>
-    </div>
 
-    <p id="copyright">&copy;2020 @itsmingjie</p>
+        <textarea id="dialogue" class="block fixed" readonly></textarea>
+
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>

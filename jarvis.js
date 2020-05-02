@@ -15,7 +15,7 @@ app.get("/*", express.static(path.join(__dirname, "/public")));
 
 // run websocket
 io.on("connection", (socket) => {
-  comm(socket, `Welcome! Jarvis is connected. Server version: ${ver}`, "info");
+  comm(socket, `Welcome! JARVIS is connected. Server version: ${ver}`, "info");
 
   socket.on("comm", (data) => {
     socket.emit("start");
@@ -34,11 +34,11 @@ io.on("connection", (socket) => {
     } else {
       // non-existing command
       socket.emit("end");
-      comm(socket, `${command} is not a valid Jarvis command.`, "error");
+      comm(socket, `${command} is not a valid JARVIS command.`, "error");
     }
   });
 });
 
 http.listen(port, () => {
-  console.log(`Jarvis listening on *:${port}`);
+  console.log(`JARVIS listening on *:${port}`);
 });
