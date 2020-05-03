@@ -4,11 +4,21 @@ const app = express();
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 const ver = require("./package.json").version;
+const basicAuth = require("express-basic-auth");
 
 const comm = require("./control/comm");
 const utils = require("./utils/");
+const config = require("./config");
 
-const port = process.env.PORT || 3000;
+const port = config.PORT || 3000;
+
+app.use(
+  basicAuth({
+    users: { [config.USERNAME]: config.PASSWORD },
+    challenge: true,
+    realm: 'JARVIS requires you to log in.',
+  })
+);
 
 // serve UI
 app.get("/*", express.static(path.join(__dirname, "/public")));
