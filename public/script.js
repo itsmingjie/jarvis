@@ -14,23 +14,31 @@ const stateColors = {
 // temporary solution to display data
 socket.on("comm", (data) => {
   if (data.origin == "server")
-    dialogue.html(
-      `<p class="message ${data.origin}" style="color: ${
+    $(
+      `<p class="message ${data.origin}" id="log-${data.ts}" style="color: ${
         stateColors[data.state]
-      }">JARVIS: ${data.message}</p>` + dialogue.html()
-    );
+      }">JARVIS: ${data.message}</p>`
+    ).hide().appendTo(dialogue).show("blind", {direction: "left"});
   else
-    dialogue.html(
-      `<p class="message ${data.origin}" style="color: ${
+    $(
+      `<p class="message ${data.origin}" id="log-${data.ts}" style="color: ${
         stateColors[data.state]
-      }">>> ${data.message}</p>` + dialogue.html()
-    );
+      }">>> ${data.message}</p>`
+    ).hide().appendTo(dialogue).show("blind", {direction: "left"});
+
+    dialogue.scrollTop(dialogue[0].scrollHeight);
 });
 
 // server side command execution started
 socket.on("start", () => toggleCommand(false));
 socket.on("end", () => toggleCommand(true));
-socket.on("clear", () => dialogue.val(""));
+socket.on("clear", () => dialogue.html(""));
+
+socket.on('disconnect', () => {
+  dialogue.append(
+    `<p class="message server" style="color: #000000">JARVIS: JARVIS is now disconnected.</p>`
+  );
+});
 
 command.keypress((event) => {
   var keycode = event.keyCode ? event.keyCode : event.which;

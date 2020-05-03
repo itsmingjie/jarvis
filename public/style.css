@@ -37,7 +37,7 @@ body {
 
 #dialogue {
   width: 99%;
-  min-height: 20rem;
+  height: 25rem;
   line-height: 1.5;
   font-family: "Ubuntu Mono", monospace;
   font-weight: normal;
@@ -45,6 +45,9 @@ body {
   resize: vertical;
   border-top-width: 15px;
   text-align: left;
+  overflow: hidden;
+  overflow-wrap: normal;
+  margin-bottom: 40px;
 }
 
 #panel {

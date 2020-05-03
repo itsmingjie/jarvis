@@ -45,8 +45,8 @@
         media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
         rel="apple-touch-startup-image" />
 
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title" content="JARVIS">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="JARVIS">
 </head>
 
 <body>
@@ -56,15 +56,17 @@
         <p id="copyright">&copy;2020 @itsmingjie</p>
 
         <div id="panel" class="block fixed">
-            <input id="command" autofocus autocomplete="off" autocapitalize="off"  placeholder="Enter command here..." />
+            <input id="command" autofocus autocomplete="off" autocapitalize="off" placeholder="Enter command here..." />
         </div>
 
-        <div id="dialogue" class="block fixed"></div>
+        <div id="dialogue"></div>
 
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"
         integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
